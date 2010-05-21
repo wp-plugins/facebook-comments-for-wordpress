@@ -1,18 +1,24 @@
 <?php
 	// If the user submitted the form, update the database with the new settings
 	if ($_POST['fbComments_update'] == 'true') {
-		$includeFbJs = ($_POST['fbComments_includeFbJs'] == 'true') ? true : false;
-		update_option('fbComments_includeFbJs', $includeFbJs);
-		
 		//$appId = (intval($_POST['fbComments_appId']) > 0) ? intval($_POST['fbComments_appId']) : null;
 		$appId = (!empty($_POST['fbComments_appId'])) ? $_POST['fbComments_appId'] : null;
 		update_option('fbComments_appId', $appId);
+		
+		$includeFbComments = ($_POST['fbComments_includeFbComments'] == 'true') ? true : false;
+		update_option('fbComments_includeFbComments', $includeFbComments);
+		
+		$includeFbJs = ($_POST['fbComments_includeFbJs'] == 'true') ? true : false;
+		update_option('fbComments_includeFbJs', $includeFbJs);
 		
 		$numPosts = intval($_POST['fbComments_numPosts']);
 		update_option('fbComments_numPosts', $numPosts);
 		
 		$width = intval($_POST['fbComments_width']);
 		update_option('fbComments_width', $width);
+		
+		$displayLocation = $_POST['fbComments_displayLocation'];
+		update_option('fbComments_displayLocation', $displayLocation);
 		
 		$containerCss = stripslashes($_POST['fbComments_containerCss']);
 		update_option('fbComments_containerCss', $containerCss);
@@ -22,10 +28,12 @@
 		
 		echo '<div class="updated"><p><strong>' . __('Options saved.') . '</strong></p></div>';
 	} else { // Retrieve the settings to display in the form
-		$includeFbJs = get_option('fbComments_includeFbJs');
 		$appId = get_option('fbComments_appId');
+		$includeFbComments = get_option('fbComments_includeFbComments');
+		$includeFbJs = get_option('fbComments_includeFbJs');
 		$numPosts = get_option('fbComments_numPosts');
 		$width = get_option('fbComments_width');
+		$displayLocation = get_option('fbComments_displayLocation');
 		$containerCss = esc_html(get_option('fbComments_containerCss'));
 		$titleCss = esc_html(get_option('fbComments_titleCss'));
 	}
@@ -38,12 +46,19 @@
 	
 	<form method="post" action="<?php echo str_replace('%7E', '~', $_SERVER['REQUEST_URI']); ?>">
 		<h4><?php _e('Application Settings'); ?></h4>
-		<p><?php _e('Application ID (<a href="http://grahamswan.com/wordpress-comments">Help</a>):'); ?><input type="text" name="fbComments_appId" value="<?php echo $appId; ?>" size="20"><em><?php _e(' (This can be retrieved from your <a href="http://www.facebook.com/developers/apps.php">Facebook application page</a>)'); ?></em></p>
-		<p><input type="checkbox" id="fbComments_includeFbJs" name="fbComments_includeFbJs" value="true" <?php if ($includeFbJs) echo 'checked="checked"'; ?> size="20"><label for="fbComments_includeFbJs"> Include Facebook JavaScript SDK</label><em><?php _e(" (This should be checked unless you've manually included the SDK elsewhere)"); ?></em></p>
+		<p><?php _e('Application ID (<a href="http://grahamswan.com/facebook-comments">Help</a>):'); ?><input type="text" name="fbComments_appId" value="<?php echo $appId; ?>" size="20"><em><?php _e(' (This can be retrieved from your <a href="http://www.facebook.com/developers/apps.php">Facebook application page</a>)'); ?></em></p>
+		<p><input type="checkbox" id="fbComments_includeFbComments" name="fbComments_includeFbComments" value="true" <?php if ($includeFbComments) echo 'checked="checked"'; ?> size="20"><label for="fbComments_includeFbComments"><?php _e(' Include Facebook Comments in posts'); ?></label><em><?php _e(" (Uncheck this if you want to hide the Facebook comments without having to deactivate the plugin)"); ?></em></p>
+		<p><input type="checkbox" id="fbComments_includeFbJs" name="fbComments_includeFbJs" value="true" <?php if ($includeFbJs) echo 'checked="checked"'; ?> size="20"><label for="fbComments_includeFbJs"><?php _e(' Include Facebook JavaScript SDK'); ?></label><em><?php _e(" (This should be checked unless you've manually included the SDK elsewhere)"); ?></em></p>
 		
 		<h4><?php _e('Comments Box Settings'); ?></h4>
 		<p><?php _e('Number of Posts to Display: '); ?><input type="text" name="fbComments_numPosts" value="<?php echo $numPosts; ?>" size="5" maxlength="3"></p>
 		<p><?php _e('Width of Comments Box (px): '); ?><input type="text" name="fbComments_width" value="<?php echo $width; ?>" size="5" maxlength="4"></p>
+		<!--<p><?php _e('Display Facebook comments before or after WordPress comments?'); ?>
+			<select name="fbComments_displayLocation">
+				<option value="before"<?php //if ($displayLocation == 'before') echo ' selected="selected"'; ?>>Before</option>
+				<option value="after"<?php //if ($displayLocation == 'after') echo ' selected="selected"'; ?>>After</option>
+			</select>
+		</p>-->
 		
 		<h4><?php _e('Style (CSS) Settings'); ?></h4>
 		<p><?php _e('Container Styles: '); ?><input type="text" name="fbComments_containerCss" value="<?php echo $containerCss; ?>" size="70"><em><?php _e(' (These styles will be applied to a &lt;div&gt; element wrapping the comments box)'); ?></em></p>

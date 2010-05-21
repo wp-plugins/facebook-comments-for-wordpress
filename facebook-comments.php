@@ -4,22 +4,24 @@
 	Plugin URI: http://www.grahamswan.com/facebook-comments
 	Description: Allows your visitors to comment on posts using their Facebook profile. Makes use of Facebook's new Social Graph plugins.
 	Author: Graham Swan
-	Version: 1.0
+	Version: 1.1
 	Author URI: http://www.grahamswan.com/
 	*/
 	
-	define('FBCOMMENTS_VERSION', '1.0');
+	define('FBCOMMENTS_VERSION', '1.1');
 
 	// Update database with default options upon plugin activation
 	function fbComments_init() {
 		$defaults = array(
-			'fbComments_includeFbJs'	=> true,
-			'fbComments_appId'			=> '',
-			'fbComments_numPosts'		=> 10,
-			'fbComments_width'			=> 500,
-			'fbComments_containerCss'	=> 'margin: 20px 0;',
-			'fbComments_titleCss'		=> 'margin-bottom: 15px; font-size: 140%; font-weight: bold; border-bottom: 2px solid #000; padding-bottom: 5px;',
-			'fbComments_displayWarning'	=> true
+			'fbComments_appId'					=> '',
+			'fbComments_includeFbComments'		=> true,
+			'fbComments_includeFbJs'			=> true,
+			'fbComments_numPosts'				=> 10,
+			'fbComments_width'					=> 500,
+			'fbComments_displayLocation'		=> 'before',
+			'fbComments_containerCss'			=> 'margin: 20px 0;',
+			'fbComments_titleCss'				=> 'margin-bottom: 15px; font-size: 140%; font-weight: bold; border-bottom: 2px solid #000; padding-bottom: 5px;',
+			'fbComments_displayWarning'			=> true
 		);
 		
 		foreach($defaults as $key => $val) {
@@ -30,10 +32,12 @@
 	// Remove database entries upon plugin deactivation
 	function fbComments_uninit() {
 		$defaults = array(
-			'fbComments_includeFbJs',
 			'fbComments_appId',
+			'fbComments_includeFbComments',
+			'fbComments_includeFbJs',
 			'fbComments_numPosts',
 			'fbComments_width',
+			'fbComments_displayLocation',
 			'fbComments_containerCss',
 			'fbComments_titleCss',
 			'fbComments_displayWarning'
@@ -44,8 +48,8 @@
 		}
 	}
 	
-	add_action('activate_plugin', 'fbComments_init');
-	add_action('deactivate_plugin', 'fbComments_uninit');
+	register_activation_hook(__FILE__, 'fbComments_init');
+	register_deactivation_hook(__FILE__, 'fbComments_uninit');
 	
 	// Display a message prompting the user to enter a Facebook application ID upon plugin activation
 	if (get_option('fbComments_displayWarning')) {
@@ -64,7 +68,7 @@
 	 **********************************/
 	
 	function fbComments_adminPage() {
-		include('facebook_comments_admin.php');
+		include('facebook-comments-admin.php');
 	}
 	
 	function fbComments_admin() {
@@ -79,10 +83,11 @@
 	
 	function fbComments_include($comments='') {
 		// Retrieve the settings to display the comments box
-		$includeFbJs = get_option('fbComments_includeFbJs');
 		$appId = get_option('fbComments_appId');
+		$includeFbJs = get_option('fbComments_includeFbJs');
 		$numPosts = get_option('fbComments_numPosts');
 		$width = get_option('fbComments_width');
+		$displayLocation = get_option('fbComments_displayLocation');
 		$containerCss = get_option('fbComments_containerCss');
 		$titleCss = get_option('fbComments_titleCss');
 		
@@ -116,6 +121,7 @@
 		
 		if (current_user_can('manage_options')) {		
 			// Retrieve the settings to display the comments box
+			$displayLocation = get_option('fbComments_displayLocation');
 			$containerCss = get_option('fbComments_containerCss');
 			$titleCss = get_option('fbComments_titleCss');
 			$optionsPage = get_bloginfo('wpurl') . '/wp-admin/options-general.php?page=facebook_comments';
@@ -125,7 +131,7 @@
 	<div style='$containerCss'>
 	    <p style='$titleCss'>" . __('Facebook comments:') . "</p>
 	    
-	    <div style='background-color: #ffebe8; border: 1px solid #c00; padding: 10px;'>" . __("Your Facebook comments would normally appear here, but you haven't set a valid application ID yet. <a href='$optionsPage' style='color: #c00;'>Go set one now</a>.") . "</div>
+	    <div style='background-color: #ffebe8; border: 1px solid #c00; padding: 7px; font-weight: bold; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;'>" . __("Your Facebook comments would normally appear here, but you haven't set a valid application ID yet. <a href='$optionsPage' style='color: #c00;'>Go set one now</a>.") . "</div>
 	</div>\n";
 		}
 		
@@ -134,10 +140,13 @@
 	
 	// Retrieve application ID to ensure we're able to display the comment box
 	$appId = get_option('fbComments_appId');
+	$includeFbComments = get_option('fbComments_includeFbComments');
 	
-	if (!empty($appId)) {
-		add_filter('comments_array', 'fbComments_include');
-	} else {
-		add_filter('comments_array', 'fbComments_error');
+	if ($includeFbComments) {
+		if (!empty($appId)) {
+			add_filter('comments_array', 'fbComments_include');
+		} else {
+			add_filter('comments_array', 'fbComments_error');
+		}
 	}
 ?>
