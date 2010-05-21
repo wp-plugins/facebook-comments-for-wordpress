@@ -20,7 +20,7 @@ Features:
 
 == Installation ==
 
-1. Unzip `facebook-comments-for-wordpress.zip` to your `/wp-content/plugins/` directory
+1. Unzip `facebook-comments-for-wordpress.1.1.zip` to your `/wp-content/plugins/` directory
 2. Activate the plugin through the `Plugins` menu in WordPress
 3. Setup the plugin options by using the `Facebook Comments` page (located under the `Settings` menu)
 
