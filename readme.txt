@@ -21,6 +21,10 @@ their comment straight to their Facebook profile page.
 3. Set the plugin up by using the 'Facebook Comments' page (located under the 'Settings' menu)
    a) Note that a Facebook application ID is required. For details on how to get one, check out http://grahamswan.com/facebook-comments
 
+== Screenshots ==
+
+1. The Facebook commenting box, complete with comments.
+
 == Changelog ==
 
 = 1.0 =
