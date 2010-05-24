@@ -89,8 +89,7 @@ post because that also causes your XID to change.
 = 1.2 =
 * Bugfix: Facebook comments will be hidden on posts on which WordPress comments are disabled
 * Bugfix: Facebook comments are retained through upgrades (you **must** set a XID to keep your comments)
-* Feature: add Facebook comments anywhere in your theme by manually inserting
-  `<?php if (function_exists('facebook_comments')) facebook_comments(); ?>` anywhere in your theme
+* Feature: add Facebook comments anywhere in your theme by manually inserting `<?php if (function_exists('facebook_comments')) facebook_comments(); ?>` where you'd like them to show up
 * Option: change `Facebook comments:` title to anything you want
 * Option: allow user to reverse the order of the Facebook comments so they're in chronological order (like WordPress comments)
 * Option: allow removal of the grey box behind the composer
