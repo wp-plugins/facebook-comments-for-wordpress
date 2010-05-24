@@ -2,7 +2,7 @@
 Tags: comments, facebook, social graph, posts
 Requires at least: 2.9.2
 Tested up to: 2.9.2
-Stable tag: 1.1
+Stable tag: 1.2
 
 Allows your visitors to comment on posts using their Facebook profile. Makes use of Facebook's new Social Graph plugins.
 
@@ -20,10 +20,6 @@ their comment straight to their Facebook profile page.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Set the plugin up by using the 'Facebook Comments' page (located under the 'Settings' menu)
    a) Note that a Facebook application ID is required. For details on how to get one, check out http://grahamswan.com/facebook-comments
-
-== Screenshots ==
-
-1. The Facebook commenting box, complete with comments.
 
 == Changelog ==
 
@@ -46,3 +42,4 @@ NOTE: The following are all issues with the Facebook library itself. They are ou
 * Option to be added allowing user to disable default WordPress commenting system on any post with Facebook Comments enabled
 * Options page to be rebuilt using AJAX (so no page reloads are required to update the settings)
 * Option to be added allowing the Facebook comments box to be included before OR after the WordPress comments
+
