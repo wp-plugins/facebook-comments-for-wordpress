@@ -58,10 +58,10 @@ Create a new CSS file on your webserver with the following contents:
 }
 `
 
-You may change the colors to whatever is required. Once the stylesheet has been created, simply add a URL to it in the
-`URL to External Stylesheet` text field on the plugin's options page.
+You may change the colors to whatever is required. Once the stylesheet has been created, simply point to it in
+the `URL to External Stylesheet` text field on the plugin's options page.
 
-= Can I have the Facebook comments show up *after* the WordPress comments? =
+= Can I have the Facebook comments show up after the WordPress comments? =
 
 * From your WordPress Dashboard, go to **Appearance -> Editor**
 * Select the **Single Post (single.php)** template from the list on the right-hand side
@@ -76,7 +76,6 @@ You may change the colors to whatever is required. Once the stylesheet has been 
 <?php if (function_exists('facebook_comments')) facebook_comments(); ?>
 <?php endwhile; else: ?>
 ...`
-
 
 = The Facebook comments box isn't loading on my site. What's wrong? =
 
