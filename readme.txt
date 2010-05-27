@@ -44,8 +44,22 @@ in your sidebar or something).
 
 = How do I get the Facebook comments to show up on a dark background? =
 
-Adjust the `Container Styles` option. Eg: add `background: #000; color: #fff;` to force the comments box to have a black
-background and white text. Alternatively, you can specify an external stylesheet on the plugin settings page.
+Create a new CSS file on your webserver with the following contents:
+
+`
+.wallkit_frame {
+	background-color: #000;
+}
+.wallkit_post {
+	color: #fff;
+}
+.wallkit_form {
+	color: #fff;
+}
+`
+
+You may change the colors to whatever is required. Once the stylesheet has been created, simply add a URL to it in the
+`URL to External Stylesheet` text field on the plugin's options page.
 
 = Can I have the Facebook comments show up after the WordPress comments? =
 
