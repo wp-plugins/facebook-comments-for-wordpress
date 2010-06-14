@@ -1,6 +1,6 @@
 === Facebook Comments for WordPress ===
 Contributors: thinkswan
-Donate link: https://www.paypal.com/ca/cgi-bin/webscr?cmd=_flow&SESSION=-9VRvkRvMgOc0mXLvBs96bKtJiexc_Fm52TxVN00oIh-fv1R8Q2iGGqNYC8&dispatch=5885d80a13c0db1f22d2300ef60a6759516e590e949da361fd1b680561e9552a
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7QKHFXCNDTA5U&lc=CA&item_name=Graham%20Swan%20%28Facebook%20Comments%20for%20WordPress%20plugin%29&item_number=thinkswan&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted
 Tags: comments, facebook, social graph, posts, pages, discussion, facebook comments
 Requires at least: 2.9.2
 Tested up to: 2.9.2
