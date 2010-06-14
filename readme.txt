@@ -169,6 +169,7 @@ NOTE: The following are all issues with the Facebook library itself. They are ou
 * Option to count Facebook comments and WordPress comments together
 * Option to enable Facebook comments for **only posts** *or* **only pages**
 * Ability to import Facebook comments into the WordPress database and vice-versa
+* Check Facebook application ID for validity
 
 == Screenshots ==
 
@@ -176,4 +177,3 @@ NOTE: The following are all issues with the Facebook library itself. They are ou
 2. Anonymous posting for users without a Facebook account.
 3. Using a custom stylesheet.
 4. The plugin settings page.
-

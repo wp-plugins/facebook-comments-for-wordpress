@@ -8,15 +8,6 @@
 	Author URI: http://www.grahamswan.com/
 	*/
 	
-	/*
-	Things I wish I could add, but don't have the time:
-	 - Ability to import all WordPress comments to Facebook comments for any given post, and vice versa
-	 - Ability to subscribe to new Facebook comments
-	 - Move entire plugin into 'fbComments' class (to avoid potential conflicts with other plugins)
-	 - Rebuild options page with AJAX
-	 - Check Facebook application ID for validity	 
-	*/
-	
 	define('FBCOMMENTS_VERSION', '1.3');
 	define('FBCOMMENTS_PATH', plugins_url('facebook-comments-for-wordpress/'));
 	
