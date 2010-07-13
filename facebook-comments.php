@@ -8,7 +8,7 @@
 	Author URI: http://www.grahamswan.com/
 	*/
 	
-	define('FBCOMMENTS_ERRORS', true); // Set to true while developing, false for a release
+	define('FBCOMMENTS_ERRORS', false); // Set to true while developing, false for a release
 	define('FBCOMMENTS_VER', '1.5.1');
 	define('FBCOMMENTS_AUTHOR', 'Graham Swan');
 	define('FBCOMMENTS_WEBPAGE', 'http://grahamswan.com/facebook-comments/');
