@@ -93,7 +93,7 @@ post because that also causes your XID to change.
 
 == Changelog ==
 
-= 1.5.2 -
+= 1.5.2 =
 * Bugfix: WordPress commenting form should now be properly hidden for most themes
 * Bugfix: `type` attribute is now set in the script inclusion (so older browsers will render it properly)
 

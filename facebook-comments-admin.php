@@ -1,8 +1,6 @@
 <?php
 	if (FBCOMMENTS_ERRORS) {
 		error_reporting(E_ALL); // Ensure all errors and warnings are verbose
-	} else {
-		error_reporting(0); // Mute all errors and warnings
 	}
 	
 	// If the user submitted the form, update the database with the new settings
