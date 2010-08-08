@@ -22,8 +22,6 @@
 	
 	if (FBCOMMENTS_ERRORS) {
 		error_reporting(E_ALL); // Ensure all errors and warnings are verbose
-	} else {
-		error_reporting(0); // Mute all errors and warnings
 	}
 	
 	// Include common functions
