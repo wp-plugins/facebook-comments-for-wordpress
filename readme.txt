@@ -12,7 +12,7 @@ Allows your visitors to comment on posts using their Facebook profile. Supports 
 
 This plugin integrates the Facebook commenting system right into your website. If a reader is logged into Facebook while
 viewing any comment-enabled page or post, they'll be able to leave a comment using their Facebook profile. Non-Facebook
-users can post anonymously with a valid email address (v1), or via other services (v2).
+users can post anonymously with a valid email address (v1), or via other services (v2). 
 
 Features:
 
