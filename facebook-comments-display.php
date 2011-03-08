@@ -185,7 +185,6 @@
 				// "publish_feed='$publishToWall' ",
 				// "</fb:comments>";
 		// }
-		echo "commentVersion: {$fbc_options['commentVersion']}";
 		if ($fbc_options['v1plusv2'] == 1) {
 			$fbc_options['hideFbLikeButton'] = true;
 			update_option('fbComments', $fbc_options);

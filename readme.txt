@@ -45,7 +45,7 @@ If you need help, please refer to the official FAQ at http://we8u.com/facebook-c
 == Changelog ==
 
 = 3.0.2.2 =
-* To see what facebook has changed/removed in v2, please read this: http://bit.ly/fbc3_changes. Briefly, gone is custom css, dark site, like button. If you want these, select "v1 only" (the default) on the settings page.
+* To see what facebook has changed/removed in v2, please read this: http://bit.ly/fbc3_changes. Briefly, gone is custom css, dark site, like button, comment counts. If you want these, select "v1 only" (the default) on the settings page.
 * IMPORTANT: WRITE DOWN YOUR XID BEFORE INSTALL THIS. This should be completely unnecessary, but it's just a wise precaution to take.
 * Added a notice in the plugin settings which displays your XID from 2.1.2 or before.
 * May not work site wide with multisite (previously WordPress MU)

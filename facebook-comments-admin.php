@@ -83,7 +83,6 @@ if (version_compare(phpversion(), FBCOMMENTS_REQUIRED_PHP_VER) == -1) {
 	$_loadversion = get_option('fbComments_xid');
 	// 2.1.2 loaded?
 	$_loadversion = (strlen($_loadversion) < 1) ? 'loaded' : $_loadversion;
-	echo "cversion: {$fbc_options['commentVersion']}";
 ?>
 
 	<div class="updated">Version 2.1.2 XID: <?php if($_loadversion) echo $_loadversion; ?></div>
