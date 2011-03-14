@@ -48,6 +48,7 @@ If you need help, please refer to the official FAQ at http://we8u.com/facebook-c
 
 = 3.1 =
 `Dev Time: 33hrs`
+* Important: I highly recommend using "v2 only", as it is, by far, the most feature-filled. If you have old comments, you can use "Display both v1 and v2 comments"
 * Issue: If you see `Warning: http://example.com/example_post is unreachable.`, [make sure your app settings are correct](http://on.fb.me/myappsettings) (enter `http`&shy;`://example.com/` for "Site URL" and `example.com` for "Site Domain", note the lack of http or a trailing slash, this is important)
 * Feature: Like button integrated into plugin. Enable on settings page. You can fully customize it there as well.
 * Feature: Like button can also be added to the top or bottom of each post on the site's main page (same "like" count as the one in comments)

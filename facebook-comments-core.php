@@ -32,7 +32,7 @@ function fbComments_doUpdate() {
 	add_option('fbComments', $fbComments_defaults); # copy defaults to db if fbComments doesn't exist
 	
 	######		3.1 new settings	######
-	if (!isset($fbc_options['fbCommentCount'])) $fbc_options['fbCommentCount'] = 'true';
+	$fbc_options['fbCommentCount'] = 'true';
 	if (!isset($fbc_options['v2ccstyle'])) $fbc_options['v2ccstyle'] = 'border:none; overflow:hidden; width:130px; padding-left:-15px; height:12px;';
 	if (!isset($fbc_options['indexLikebtn'])) {
 		$fbc_options['indexLikebtn'] = array('display' => 'none',
