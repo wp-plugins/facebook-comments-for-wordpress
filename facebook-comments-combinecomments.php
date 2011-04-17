@@ -80,7 +80,7 @@ function fbComments_combineCommentCounts($value) {
 	$xid = $fbc_options['xid'] . "_post$postId";
 
 	// Return the cached comment count (if it exists)
-	if (get_option("fbComments_commentCount_$xid")) {
+	if (get_option("fbComments_commentCount_$xid") !== null) {
 		return fbComments_getCachedCommentCount($xid, $value);
 	}
 
