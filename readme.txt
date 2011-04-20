@@ -10,7 +10,7 @@ Allows your visitors to comment on posts using their Facebook profile. Supports 
 
 == Description ==
 
-Official site (check for the latest): http://j.mp/fbc_official  
+Official site (check for the latest): http://j.mp/fbc_official  || Twitter http://twitter.com/we8u
 
 This plugin integrates the Facebook commenting system (new, old or both) right into your website. 
 If a reader is logged into Facebook while viewing any comment-enabled page or post, 
